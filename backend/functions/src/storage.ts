@@ -30,24 +30,10 @@ export const fetchLatestPrice = async (): Promise<number | undefined> => {
   return Promise.resolve(data.price);
 };
 
-type DocumentReference = firestore.DocumentReference<firestore.DocumentData>
-
-export const registerNewUserWithFCMToken =
-    async (token: string): Promise<DocumentReference> => {
-      const collection = firestore().collection("@users");
-      const doc = collection.doc(token);
-
-      await doc.set({
-        token,
-      });
-
-      return Promise.resolve(doc);
-    };
-
 export const setPriceThresholdForUserById =
-    async (userId: string, price: number): Promise<void> => {
+    async (id: string, price: number): Promise<void> => {
       const collection = firestore().collection("@users");
-      const doc = collection.doc(userId);
+      const doc = collection.doc(id);
 
       await doc.update({
         threshold_price: price,
@@ -66,4 +52,16 @@ export const getSettingsData =
       if (doc == undefined|| !doc.exists) throw new Error("NOT SETTINGS");
 
       return Promise.resolve(doc.data() ?? {});
+    };
+
+export const getAllUserTokens =
+    async (): Promise<string[]> => {
+      const data = await firestore()
+          .collection("@users")
+          .get();
+
+      const tokens = data.docs
+          .map((doc) => (doc.data()?.token as string) ?? "-");
+
+      return Promise.resolve(tokens);
     };

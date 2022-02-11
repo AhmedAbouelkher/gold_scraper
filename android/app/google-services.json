@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "45861888239",
+    "project_id": "gold-scraper",
+    "storage_bucket": "gold-scraper.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:45861888239:android:9e8a7f0967b7903776fb1a",
+        "android_client_info": {
+          "package_name": "com.ahmed.gold_scraper"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "45861888239-73pbu2h1uo1ujcmo6mk9907gsi3v03d9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNDbjgkkhCJC7tSqEbdjdNRo0J_NE0CvU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "45861888239-73pbu2h1uo1ujcmo6mk9907gsi3v03d9.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "45861888239-dq70s2mbua4hp2ksnkr1opue1114s39e.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.ahmed.goldScraper"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
